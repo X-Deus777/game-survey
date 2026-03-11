@@ -16,9 +16,17 @@ body{
 background:#050505;
 color:white;
 font-family:Arial;
-padding:20px;
+margin:0;
+display:flex;
+}
+
+/* MAIN */
+
+.main{
+flex:1;
 display:flex;
 justify-content:center;
+padding:20px;
 }
 
 .container{
@@ -36,33 +44,8 @@ margin-bottom:10px;
 }
 
 .progress{
+opacity:0.6;
 font-size:14px;
-opacity:0.7;
-}
-
-/* NAVIGATION */
-
-.game-nav{
-display:flex;
-overflow-x:auto;
-gap:6px;
-padding:8px 0;
-margin-bottom:15px;
-}
-
-.game-nav button{
-flex:0 0 auto;
-padding:6px 10px;
-border-radius:6px;
-border:1px solid #333;
-background:#111;
-color:white;
-font-size:12px;
-cursor:pointer;
-}
-
-.game-nav button.active{
-background:#22c55e;
 }
 
 /* VIDEO */
@@ -71,7 +54,6 @@ video{
 width:100%;
 border-radius:12px;
 margin-bottom:20px;
-background:black;
 }
 
 iframe{
@@ -95,33 +77,11 @@ margin-bottom:25px;
 width:100%;
 border-radius:10px;
 cursor:pointer;
-transition:transform .25s, box-shadow .25s;
+transition:transform .2s;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
-box-shadow:0 12px 30px rgba(0,0,0,0.8);
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
+transform:scale(1.04);
 }
 
 /* RATING */
@@ -160,30 +120,107 @@ cursor:pointer;
 font-size:16px;
 }
 
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/* SIDE NAV */
+
+.side{
+width:300px;
+background:#0b0b0b;
+border-left:1px solid #222;
+overflow-y:auto;
+transition:transform .3s;
+}
+
+.side.hidden{
+transform:translateX(100%);
+}
+
+.side h3{
+padding:15px;
+margin:0;
+border-bottom:1px solid #222;
+}
+
+.game-list{
+display:flex;
+flex-direction:column;
+}
+
+.game-list button{
+text-align:left;
+padding:10px 15px;
+border:none;
+border-bottom:1px solid #111;
+background:#0b0b0b;
+color:white;
+cursor:pointer;
+}
+
+.game-list button:hover{
+background:#111;
+}
+
+.game-list button.active{
+background:#22c55e;
+color:black;
+}
+
+/* TOGGLE */
+
+.toggle{
+position:fixed;
+right:310px;
+top:20px;
+z-index:50;
+background:#22c55e;
+border:none;
+padding:10px 12px;
+border-radius:6px;
+cursor:pointer;
+}
+
 /* MOBILE */
 
-@media (max-width:700px){
+@media (max-width:900px){
 
-body{
-padding:10px;
+.side{
+position:fixed;
+right:0;
+top:0;
+height:100%;
+z-index:40;
 }
 
-iframe{
-height:260px;
-}
-
-video{
-max-height:260px;
+.toggle{
+right:20px;
 }
 
 .gallery{
 grid-template-columns:repeat(2,1fr);
-gap:8px;
 }
 
-.rating button{
-width:36px;
-height:36px;
+iframe{
+height:260px;
 }
 
 }
@@ -194,6 +231,10 @@ height:36px;
 
 <body>
 
+<button class="toggle" onclick="toggleMenu()">Игры</button>
+
+<div class="main">
+
 <div class="container">
 
 <div class="header">
@@ -201,15 +242,23 @@ height:36px;
 <div class="progress" id="progress"></div>
 </div>
 
-<div id="game-nav" class="game-nav"></div>
-
 <div id="video"></div>
 
-<div class="gallery" id="gallery"></div>
+<div id="gallery" class="gallery"></div>
 
-<div class="rating" id="rating"></div>
+<div id="rating" class="rating"></div>
 
 <button class="next" onclick="nextGame()">Следующая игра</button>
+
+</div>
+
+</div>
+
+<div class="side hidden" id="side">
+
+<h3>Игры</h3>
+
+<div id="game-list" class="game-list"></div>
 
 </div>
 
@@ -219,9 +268,9 @@ height:36px;
 
 <script>
 
-/* GAME LIST */
+/* GAME IDS */
 
-const games = [
+const games=[
 212480,209120,246900,389730,217200,1805570,976310,
 1260320,1356040,1071870,620,435150,1426210,413150,
 35700,268910,477160,960990,237110,1732920,41070,
@@ -235,8 +284,9 @@ const games = [
 let index=0
 let selected=null
 let answers={}
+let titles={}
 
-/* RATING BUTTONS */
+/* RATING */
 
 function createRating(){
 
@@ -264,38 +314,37 @@ r.appendChild(b)
 
 }
 
-/* NAVIGATION */
+/* MENU */
 
-function createGameNav(){
+function toggleMenu(){
 
-const nav=document.getElementById("game-nav")
+document.getElementById("side").classList.toggle("hidden")
+
+}
+
+/* GAME LIST */
+
+function updateGameList(){
+
+const list=document.getElementById("game-list")
+list.innerHTML=""
 
 games.forEach((g,i)=>{
 
 const b=document.createElement("button")
 
-b.innerText=i+1
+b.innerText=titles[g]||("Game "+g)
+
+b.classList.toggle("active",i===index)
 
 b.onclick=()=>{
 
 index=i
 loadGame()
-updateNav()
 
 }
 
-nav.appendChild(b)
-
-})
-
-}
-
-function updateNav(){
-
-document.querySelectorAll("#game-nav button")
-.forEach((b,i)=>{
-
-b.classList.toggle("active",i===index)
+list.appendChild(b)
 
 })
 
@@ -305,33 +354,35 @@ b.classList.toggle("active",i===index)
 
 async function loadGame(){
 
-const appid=games[index]
+const id=games[index]
 
-document.getElementById("progress").innerText =
+document.getElementById("progress").innerText=
 (index+1)+" / "+games.length
 
-updateNav()
-
-const res=await fetch(`/game?appid=${appid}`)
+const res=await fetch(`/game?appid=${id}`)
 const game=await res.json()
 
+titles[id]=game.title
+
 document.getElementById("title").innerText=game.title
+
+updateGameList()
+
+/* VIDEO */
 
 const videoContainer=document.getElementById("video")
 videoContainer.innerHTML=""
 
-/* VIDEO */
-
 if(game.video){
 
-const video=document.createElement("video")
+const v=document.createElement("video")
 
-video.controls=true
-video.autoplay=true
-video.loop=true
-video.src=game.video
+v.controls=true
+v.autoplay=true
+v.loop=true
+v.src=game.video
 
-videoContainer.appendChild(video)
+videoContainer.appendChild(v)
 
 }
 
@@ -340,13 +391,13 @@ else if(game.embed){
 const iframe=document.createElement("iframe")
 
 iframe.src=game.embed
-iframe.allow="autoplay; fullscreen"
+iframe.allow="autoplay"
 
 videoContainer.appendChild(iframe)
 
 }
 
-/* SCREENSHOTS */
+/* GALLERY */
 
 const gallery=document.getElementById("gallery")
 gallery.innerHTML=""
@@ -385,27 +436,23 @@ lightboxImg.src=src
 
 }
 
-lightbox.onclick=()=>{
+lightbox.onclick=()=>lightbox.style.display="none"
 
-lightbox.style.display="none"
-
-}
-
-/* NEXT GAME */
+/* NEXT */
 
 async function nextGame(){
 
 if(selected===null){
+
 alert("Поставь оценку")
 return
+
 }
 
-const gameId=games[index]
+const id=games[index]
 const score=selected
 
-answers[gameId]=score
-
-/* SEND TO GOOGLE SHEETS */
+answers[id]=score
 
 try{
 
@@ -414,16 +461,10 @@ await fetch(
 {
 method:"POST",
 mode:"no-cors",
-body:JSON.stringify({
-game:gameId,
-score:score
+body:JSON.stringify({game:id,score:score})
 })
-}
-)
 
-}catch(e){
-console.log(e)
-}
+}catch(e){}
 
 index++
 
@@ -444,7 +485,7 @@ loadGame()
 /* INIT */
 
 createRating()
-createGameNav()
+updateGameList()
 loadGame()
 
 </script>
