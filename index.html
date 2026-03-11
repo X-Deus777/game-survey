@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Steam Game Survey</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -12,14 +16,56 @@ body{
 background:#050505;
 color:white;
 font-family:Arial;
-padding:40px;
+padding:20px;
 display:flex;
 justify-content:center;
 }
 
 .container{
 width:900px;
+max-width:100%;
 }
+
+/* HEADER */
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+}
+
+.progress{
+font-size:14px;
+opacity:0.7;
+}
+
+/* NAVIGATION */
+
+.game-nav{
+display:flex;
+overflow-x:auto;
+gap:6px;
+padding:8px 0;
+margin-bottom:15px;
+}
+
+.game-nav button{
+flex:0 0 auto;
+padding:6px 10px;
+border-radius:6px;
+border:1px solid #333;
+background:#111;
+color:white;
+font-size:12px;
+cursor:pointer;
+}
+
+.game-nav button.active{
+background:#22c55e;
+}
+
+/* VIDEO */
 
 video{
 width:100%;
@@ -35,6 +81,8 @@ border-radius:12px;
 margin-bottom:20px;
 border:none;
 }
+
+/* GALLERY */
 
 .gallery{
 display:grid;
@@ -76,6 +124,8 @@ max-height:90%;
 border-radius:10px;
 }
 
+/* RATING */
+
 .rating{
 display:flex;
 gap:8px;
@@ -97,6 +147,8 @@ cursor:pointer;
 background:#22c55e;
 }
 
+/* NEXT */
+
 .next{
 margin-top:20px;
 width:100%;
@@ -105,16 +157,51 @@ border:none;
 border-radius:10px;
 background:#22c55e;
 cursor:pointer;
+font-size:16px;
+}
+
+/* MOBILE */
+
+@media (max-width:700px){
+
+body{
+padding:10px;
+}
+
+iframe{
+height:260px;
+}
+
+video{
+max-height:260px;
+}
+
+.gallery{
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+}
+
+.rating button{
+width:36px;
+height:36px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1 id="title">Loading...</h1>
+<div class="header">
+<h2 id="title">Loading...</h2>
+<div class="progress" id="progress"></div>
+</div>
+
+<div id="game-nav" class="game-nav"></div>
 
 <div id="video"></div>
 
@@ -126,74 +213,30 @@ cursor:pointer;
 
 </div>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
 <img id="lightbox-img">
 </div>
 
 <script>
 
+/* GAME LIST */
+
 const games = [
-212480,
-209120,
-246900,
-389730,
-217200,
-1805570,
-976310,
-1260320,
-1356040,
-1071870,
-620,
-435150,
-1426210,
-413150,
-35700,
-268910,
-477160,
-960990,
-237110,
-1732920,
-41070,
-489630,
-221040,
-359840,
-35720,
-640590,
-226840,
-204360,
-247080,
-22230,
-319910,
-281920,
-373420,
-57680,
-1577120,
-1567020,
-1313140,
-1281590,
-1097840,
-983970,
-972660,
-914750,
-797410,
-728880,
-710920,
-690640,
-641990,
-471550,
-374040,
-371140,
-341800,
-295790,
-275390,
-255070,
-41000
+212480,209120,246900,389730,217200,1805570,976310,
+1260320,1356040,1071870,620,435150,1426210,413150,
+35700,268910,477160,960990,237110,1732920,41070,
+489630,221040,359840,35720,640590,226840,204360,
+247080,22230,319910,281920,373420,57680,1577120,
+1567020,1313140,1281590,1097840,983970,972660,
+914750,797410,728880,710920,690640,641990,471550,
+374040,371140,341800,295790,275390,255070,41000
 ]
 
 let index=0
 let selected=null
 let answers={}
+
+/* RATING BUTTONS */
 
 function createRating(){
 
@@ -202,7 +245,6 @@ const r=document.getElementById("rating")
 for(let i=0;i<=10;i++){
 
 const b=document.createElement("button")
-
 b.innerText=i
 
 b.onclick=()=>{
@@ -222,21 +264,63 @@ r.appendChild(b)
 
 }
 
+/* NAVIGATION */
+
+function createGameNav(){
+
+const nav=document.getElementById("game-nav")
+
+games.forEach((g,i)=>{
+
+const b=document.createElement("button")
+
+b.innerText=i+1
+
+b.onclick=()=>{
+
+index=i
+loadGame()
+updateNav()
+
+}
+
+nav.appendChild(b)
+
+})
+
+}
+
+function updateNav(){
+
+document.querySelectorAll("#game-nav button")
+.forEach((b,i)=>{
+
+b.classList.toggle("active",i===index)
+
+})
+
+}
+
+/* LOAD GAME */
+
 async function loadGame(){
 
-const appid = games[index]
+const appid=games[index]
 
-console.log("loading",appid)
+document.getElementById("progress").innerText =
+(index+1)+" / "+games.length
 
-const res = await fetch(`/game?appid=${appid}`)
-const game = await res.json()
+updateNav()
 
-document.getElementById("title").innerText = game.title
+const res=await fetch(`/game?appid=${appid}`)
+const game=await res.json()
 
-/* VIDEO */
+document.getElementById("title").innerText=game.title
 
 const videoContainer=document.getElementById("video")
 videoContainer.innerHTML=""
+
+/* VIDEO */
 
 if(game.video){
 
@@ -245,55 +329,7 @@ const video=document.createElement("video")
 video.controls=true
 video.autoplay=true
 video.loop=true
-video.volume=1
-video.muted=false
-
 video.src=game.video
-
-video.onerror=()=>{
-
-if(game.hls){
-
-if(Hls.isSupported()){
-
-const hls=new Hls()
-hls.loadSource(game.hls)
-hls.attachMedia(video)
-
-}else{
-
-video.src=game.hls
-
-}
-
-}
-
-}
-
-videoContainer.appendChild(video)
-
-}
-
-else if(game.hls){
-
-const video=document.createElement("video")
-
-video.controls=true
-video.autoplay=true
-video.volume=1
-video.muted=false
-
-if(Hls.isSupported()){
-
-const hls=new Hls()
-hls.loadSource(game.hls)
-hls.attachMedia(video)
-
-}else{
-
-video.src=game.hls
-
-}
 
 videoContainer.appendChild(video)
 
@@ -305,7 +341,6 @@ const iframe=document.createElement("iframe")
 
 iframe.src=game.embed
 iframe.allow="autoplay; fullscreen"
-iframe.allowFullscreen=true
 
 videoContainer.appendChild(iframe)
 
@@ -323,7 +358,6 @@ game.screenshots.forEach(src=>{
 const img=document.createElement("img")
 
 img.src=src
-
 img.onclick=()=>openImage(src)
 
 gallery.appendChild(img)
@@ -361,50 +395,41 @@ lightbox.style.display="none"
 
 async function nextGame(){
 
-if(selected === null){
+if(selected===null){
 alert("Поставь оценку")
 return
 }
 
-const gameId = games[index]
-const score = selected
+const gameId=games[index]
+const score=selected
 
-answers[gameId] = score
+answers[gameId]=score
 
-/* отправляем в Google Sheets */
+/* SEND TO GOOGLE SHEETS */
 
 try{
 
-await fetch("https://script.google.com/macros/s/AKfycbxh2BlgebEKrA-HiCy5p7YWypnq7fxww2jvFAqYRLU_qF3scFqWUgqGLjDmZfOrbMwP/exec",{
-
+await fetch(
+"https://script.google.com/macros/s/AKfycbxh2BlgebEKrA-HiCy5p7YWypnq7fxww2jvFAqYRLU_qF3scFqWUgqGLjDmZfOrbMwP/exec",
+{
 method:"POST",
-
 mode:"no-cors",
-
 body:JSON.stringify({
 game:gameId,
 score:score
 })
-
-})
-
-console.log("sent to sheets")
+}
+)
 
 }catch(e){
-
-console.log("error sending to sheets",e)
-
+console.log(e)
 }
-
-/* следующая игра */
 
 index++
 
-if(index >= games.length){
+if(index>=games.length){
 
 localStorage.setItem("steamSurvey",JSON.stringify(answers))
-
-console.log("RESULTS",answers)
 
 alert("Опрос завершён")
 
@@ -416,7 +441,10 @@ loadGame()
 
 }
 
+/* INIT */
+
 createRating()
+createGameNav()
 loadGame()
 
 </script>
