@@ -1,0 +1,332 @@
+[
+  {
+    "appid": 212480,
+    "title": "Sonic & All-Stars Racing Transformed Collection",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/2028308/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/212480/10343/10472e7b0a17d1fadf56422c13fc522afedf0d43/1756444068/hls_264_master.m3u8?t=1447357292"
+  },
+  {
+    "appid": 389730,
+    "title": "TEKKEN 7",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256686368/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/389730/105879/160661dff251c9757e618ffc6dd7545c5f02113e/1750523948/hls_264_master.m3u8?t=1496409941"
+  },
+  {
+    "appid": 217200,
+    "title": "App 217200",
+    "video": null,
+    "hls": null
+  },
+  {
+    "appid": 1805570,
+    "title": "DEMONS",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/257100816/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1805570/833004/d0516cd894a5054202e26c0ac4cb31c13ceb882b/1751032875/hls_264_master.m3u8?t=1740585381"
+  },
+  {
+    "appid": 976310,
+    "title": "Mortal Kombat 11",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256813084/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/976310/332672/8f6e1b6366ce432e28d6e3df6d5b97e09a0a0a44/1750603056/hls_264_master.m3u8?t=1607567246"
+  },
+  {
+    "appid": 1260320,
+    "title": "Party Animals",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/257285250/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1260320/21576131/f5c2ae2d6f5dc6245582051733a53f30cd65dc3b/1770878384/hls_264_master.m3u8?t=1770880492"
+  },
+  {
+    "appid": 1356040,
+    "title": "Ampersat",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256823213/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1356040/349281/ae539153527003e200b78ee22d335a1f2f15ab77/1751226279/hls_264_master.m3u8?t=1613849868"
+  },
+  {
+    "appid": 1071870,
+    "title": "Biped",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256772380/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1071870/261838/ff06baed6c1db05a90800b56fc15b19807a0eda8/1750612508/hls_264_master.m3u8?t=1770134411"
+  },
+  {
+    "appid": 209120,
+    "title": "App 209120",
+    "video": null,
+    "hls": null
+  },
+  {
+    "appid": 620,
+    "title": "Portal 2",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/5787/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/620/3746/0f4bee66d490b637707ac4fca3e850f2cc2d3b2a/1750108721/hls_264_master.m3u8?t=1682715616"
+  },
+  {
+    "appid": 435150,
+    "title": "Divinity: Original Sin 2 - Definitive Edition",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256694830/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/435150/121883/ccbcafb42a53360716b3c81a97ef8398bb580cc0/1750530604/hls_264_master.m3u8?t=1561485484"
+  },
+  {
+    "appid": 1426210,
+    "title": "It Takes Two",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256827093/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1426210/356092/0165ad2494097e40af29c015e8948175c3fb97a8/1750688156/hls_264_master.m3u8?t=1616514535"
+  },
+  {
+    "appid": 246900,
+    "title": "Viscera Cleanup Detail",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256657611/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/246900/45383/ec5f214734dde8df74871e10616ef900a4cba3c9/1750487283/hls_264_master.m3u8?t=1447378612"
+  },
+  {
+    "appid": 413150,
+    "title": "Stardew Valley",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256815967/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/413150/336433/0058de516bf7c46986ba1e81172ffd3c2ca6cad7/1750527541/hls_264_master.m3u8?t=1754692862"
+  },
+  {
+    "appid": 35700,
+    "title": "App 35700",
+    "video": null,
+    "hls": null
+  },
+  {
+    "appid": 268910,
+    "title": "Cuphead",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256894191/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/268910/476013/2be829e20a796ed2e0e707fb1c747e1d15f6fb25/1750499396/hls_264_master.m3u8?t=1656595223"
+  },
+  {
+    "appid": 477160,
+    "title": "Human Fall Flat",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/257298228/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/477160/1047236089/f415d6bc5bf94b2b7b3f97849d802a5d0880f751/1772711935/hls_264_master.m3u8?t=1772719522"
+  },
+  {
+    "appid": 960990,
+    "title": "Beyond: Two Souls",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256784009/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/960990/282760/c754a6b96ef10b39336dd71648683a801e17cbf4/1750601290/hls_264_master.m3u8?t=1589294861"
+  },
+  {
+    "appid": 237110,
+    "title": "App 237110",
+    "video": null,
+    "hls": null
+  },
+  {
+    "appid": 1732920,
+    "title": "Bulanci",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256916244/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1732920/513805/b04672cc7697f3cd2e8caffc6700b6dd8a19214e/1751025233/hls_264_master.m3u8?t=1697038734"
+  },
+  {
+    "appid": 41070,
+    "title": "Serious Sam 3: BFE",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/81294/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/41070/6390/b39e0537ac8f31a70b7d960581e80c95aa935f0e/1751246326/hls_264_master.m3u8?t=1447355067"
+  },
+  {
+    "appid": 489630,
+    "title": "Warhammer 40,000: Gladius - Relics of War",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256814807/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/489630/335090/f74ffabbb3a7c75a62d3b6143ecf81d71c408049/1750536861/hls_264_master.m3u8?t=1609751189"
+  },
+  {
+    "appid": 221040,
+    "title": "Resident Evil 6",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/2028513/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/221040/11063/be29e2477580157777a4591f64b661ae5a970246/1750481628/hls_264_master.m3u8?t=1447357673"
+  },
+  {
+    "appid": 359840,
+    "title": "Shift Happens",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256678914/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/359840/88768/e893c930214142cbac5f2535364f935266f1c44b/1751269810/hls_264_master.m3u8?t=1487780897"
+  },
+  {
+    "appid": 35720,
+    "title": "Trine 2: Complete Story",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/81243/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/35720/6190/aab9811761e1f6389f1f1e769e67d8ff8374c62a/1750485178/hls_264_master.m3u8?t=1447354937"
+  },
+  {
+    "appid": 640590,
+    "title": "The LEGO® NINJAGO® Movie Video Game",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256693161/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/640590/118905/6bf2097f32980cf8cdcb6ca863a8ee4da1870285/1750565576/hls_264_master.m3u8?t=1504026004"
+  },
+  {
+    "appid": 226840,
+    "title": "Age of Wonders III",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/2030278/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/226840/15582/492ac761df2e9b0535ceda21a5f312188b2660b5/1750482434/hls_264_master.m3u8?t=1447359645"
+  },
+  {
+    "appid": 204360,
+    "title": "Castle Crashers®",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/257179314/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/204360/1648240310/809498fccda76a215d0e69e4804aecf170c40a94/1754504266/hls_264_master.m3u8?t=1754506159"
+  },
+  {
+    "appid": 247080,
+    "title": "Crypt of the NecroDancer",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/257224772/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/247080/1015654038/e76ac8cd16d2ff2b6a596786af484affc503aa00/1761847004/hls_264_master.m3u8?t=1761848868"
+  },
+  {
+    "appid": 22230,
+    "title": "Rock of Ages",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/81093/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/22230/5727/f0633ce61592cab6c21e7e77ebcfa76192575a64/1751245968/hls_264_master.m3u8?t=1447354629"
+  },
+  {
+    "appid": 319910,
+    "title": "Trine 3: The Artifacts of Power",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256658111/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/319910/46398/b2eef05a25762b95e30b2505339873964c97fefa/1750507470/hls_264_master.m3u8?t=1447378816"
+  },
+  {
+    "appid": 281920,
+    "title": "Splatter - Zombiecalypse Now",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/2032641/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/281920/21495/c44a55ffca55d9a3c211d85c2625fbe23dd347a6/1750488975/hls_264_master.m3u8?t=1447362166"
+  },
+  {
+    "appid": 373420,
+    "title": "Divinity: Original Sin - Enhanced Edition",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256657641/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/373420/45430/e724b429cec92813a553e99afdc1beb42a46f7a2/1750518976/hls_264_master.m3u8?t=1512655215"
+  },
+  {
+    "appid": 57680,
+    "title": "The First Templar - Steam Special Edition",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/80477/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/57680/4471/9f82d74f938ed849e70045c682b75e48dda5660a/1751246389/hls_264_master.m3u8?t=1447353797"
+  },
+  {
+    "appid": 1577120,
+    "title": "The Quarry",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256893088/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1577120/474059/7e944a3792177e12ea8331d19a9396093baa0abb/1750703229/hls_264_master.m3u8?t=1655914757"
+  },
+  {
+    "appid": 1567020,
+    "title": "The Dark Pictures Anthology: The Devil in Me",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256911784/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1567020/506360/e379c805f46b8839fa88cec58fa6fe3cef5035fb/1750702018/hls_264_master.m3u8?t=1668730026"
+  },
+  {
+    "appid": 1313140,
+    "title": "Cult of the Lamb",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/257045569/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1313140/739299/44677940efbc210f65d05893125c9fbdb4d31fbe/1750671650/hls_264_master.m3u8?t=1723478272"
+  },
+  {
+    "appid": 1281590,
+    "title": "The Dark Pictures Anthology: House of Ashes",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256855927/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1281590/409196/5de03d9a3cb244d674e882cf2d9b42adc0807dd1/1750662218/hls_264_master.m3u8?t=1634740460"
+  },
+  {
+    "appid": 1097840,
+    "title": "Gears 5",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256812727/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/1097840/332140/07c6b24667d4152b2a6d133058e675808151e9cf/1750619277/hls_264_master.m3u8?t=1608034011"
+  },
+  {
+    "appid": 983970,
+    "title": "Haven",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256812196/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/983970/331246/2fddd5ec6a5c8c5df439743d650e91d282313796/1750604028/hls_264_master.m3u8?t=1683558475"
+  },
+  {
+    "appid": 972660,
+    "title": "Spiritfarer®: Farewell Edition",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256864183/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/972660/423464/ed8d37395ebb5a287460b8b7b88496da5903bd4a/1750602585/hls_264_master.m3u8?t=1683305796"
+  },
+  {
+    "appid": 914750,
+    "title": "Bee Simulator",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/257077326/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/914750/792280/986db17f01a65e4aa53045ff40b0cc6627af0d7e/1750596287/hls_264_master.m3u8?t=1732782365"
+  },
+  {
+    "appid": 797410,
+    "title": "Headsnatchers",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256766677/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/797410/251663/5495b654a78ff1338064ca9e6002ac60b7a0d352/1751146039/hls_264_master.m3u8?t=1573423206"
+  },
+  {
+    "appid": 728880,
+    "title": "Overcooked! 2",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256803126/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/728880/316103/1b19211ee13dc4881fae850c036de885578dc15c/1750576130/hls_264_master.m3u8?t=1601561015"
+  },
+  {
+    "appid": 710920,
+    "title": "Darksiders Genesis",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256752726/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/710920/226875/b13e7f321f0e531b0155ab88f98bad96a50161f2/1750573381/hls_264_master.m3u8?t=1559840398"
+  },
+  {
+    "appid": 690640,
+    "title": "Trine 4: The Nightmare Prince",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256763950/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/690640/246590/13adc090c74d585f7fb3ee44e8da1cd20e9eef41/1750571211/hls_264_master.m3u8?t=1570539731"
+  },
+  {
+    "appid": 641990,
+    "title": "The Escapists 2",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256694499/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/641990/121340/4ad73b5dd18eefdd14d32011688832de58ae99cd/1750565967/hls_264_master.m3u8?t=1504542318"
+  },
+  {
+    "appid": 471550,
+    "title": "Nine Parchments",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256703107/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/471550/136947/dd0357244f72eca913a9cf670aac44d56693a453/1750534802/hls_264_master.m3u8?t=1528356927"
+  },
+  {
+    "appid": 374040,
+    "title": "Portal Knights",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256775844/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/374040/268083/b78fe3ae2ca86b7e2facb698155436b0360c15c0/1750519982/hls_264_master.m3u8?t=1589362653"
+  },
+  {
+    "appid": 371140,
+    "title": "Aegis Defenders",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256706984/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/371140/143898/f847de7b812067e9287f56f20792c5cd84325eba/1751271753/hls_264_master.m3u8?t=1516913484"
+  },
+  {
+    "appid": 341800,
+    "title": "Keep Talking and Nobody Explodes",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256764724/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/341800/248222/4b91a997c6531281ecd4d80634eef03bcf560e22/1750512513/hls_264_master.m3u8?t=1571943664"
+  },
+  {
+    "appid": 295790,
+    "title": "Never Alone (Kisima Ingitchuna)",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/2037833/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/295790/32731/6242a2531dee20b797f3738e47eb5ab377b58718/1751262773/hls_264_master.m3u8?t=1447370885"
+  },
+  {
+    "appid": 275390,
+    "title": "Guacamelee! Super Turbo Championship Edition",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/2033951/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/275390/24114/f3e3de740290cc57be3df6a9b4b142c64d0eabaa/1750500352/hls_264_master.m3u8?t=1447363192"
+  },
+  {
+    "appid": 255070,
+    "title": "Abyss Odyssey",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/2032900/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/255070/21922/9944dc48f61dd43d8f481562a832a5329be71856/1751261498/hls_264_master.m3u8?t=1447362325"
+  },
+  {
+    "appid": 41000,
+    "title": "Serious Sam HD: The First Encounter",
+    "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/80492/movie480.mp4",
+    "hls": "https://video.akamai.steamstatic.com/store_trailers/41000/4486/cdcb4642d1c6b54cdbd39c678b8ca45d4b3895a9/1750485573/hls_264_master.m3u8?t=1447353807"
+  }
+]

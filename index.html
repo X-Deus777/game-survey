@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Steam Game Survey</title>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<style>
+
+body{
+background:#050505;
+color:white;
+font-family:Arial;
+padding:40px;
+display:flex;
+justify-content:center;
+}
+
+.container{
+width:900px;
+}
+
+video{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
+background:black;
+}
+
+iframe{
+width:100%;
+height:520px;
+border-radius:12px;
+margin-bottom:20px;
+border:none;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:12px;
+margin-bottom:25px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+transition:transform .25s, box-shadow .25s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 12px 30px rgba(0,0,0,0.8);
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+.rating{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.rating button{
+width:40px;
+height:40px;
+border-radius:8px;
+border:1px solid #333;
+background:#111;
+color:white;
+cursor:pointer;
+}
+
+.rating button.active{
+background:#22c55e;
+}
+
+.next{
+margin-top:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#22c55e;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="title">Loading...</h1>
+
+<div id="video"></div>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="rating" id="rating"></div>
+
+<button class="next" onclick="nextGame()">Следующая игра</button>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+const games = [
+212480,
+209120,
+246900,
+389730,
+217200,
+1805570,
+976310,
+1260320,
+1356040,
+1071870,
+620,
+435150,
+1426210,
+413150,
+35700,
+268910,
+477160,
+960990,
+237110,
+1732920,
+41070,
+489630,
+221040,
+359840,
+35720,
+640590,
+226840,
+204360,
+247080,
+22230,
+319910,
+281920,
+373420,
+57680,
+1577120,
+1567020,
+1313140,
+1281590,
+1097840,
+983970,
+972660,
+914750,
+797410,
+728880,
+710920,
+690640,
+641990,
+471550,
+374040,
+371140,
+341800,
+295790,
+275390,
+255070,
+41000
+]
+
+let index=0
+let selected=null
+let answers={}
+
+function createRating(){
+
+const r=document.getElementById("rating")
+
+for(let i=0;i<=10;i++){
+
+const b=document.createElement("button")
+
+b.innerText=i
+
+b.onclick=()=>{
+
+selected=i
+
+document.querySelectorAll(".rating button")
+.forEach(x=>x.classList.remove("active"))
+
+b.classList.add("active")
+
+}
+
+r.appendChild(b)
+
+}
+
+}
+
+async function loadGame(){
+
+const appid = games[index]
+
+console.log("loading",appid)
+
+const res = await fetch(`/game?appid=${appid}`)
+const game = await res.json()
+
+document.getElementById("title").innerText = game.title
+
+/* VIDEO */
+
+const videoContainer=document.getElementById("video")
+videoContainer.innerHTML=""
+
+if(game.video){
+
+const video=document.createElement("video")
+
+video.controls=true
+video.autoplay=true
+video.loop=true
+video.volume=1
+video.muted=false
+
+video.src=game.video
+
+video.onerror=()=>{
+
+if(game.hls){
+
+if(Hls.isSupported()){
+
+const hls=new Hls()
+hls.loadSource(game.hls)
+hls.attachMedia(video)
+
+}else{
+
+video.src=game.hls
+
+}
+
+}
+
+}
+
+videoContainer.appendChild(video)
+
+}
+
+else if(game.hls){
+
+const video=document.createElement("video")
+
+video.controls=true
+video.autoplay=true
+video.volume=1
+video.muted=false
+
+if(Hls.isSupported()){
+
+const hls=new Hls()
+hls.loadSource(game.hls)
+hls.attachMedia(video)
+
+}else{
+
+video.src=game.hls
+
+}
+
+videoContainer.appendChild(video)
+
+}
+
+else if(game.embed){
+
+const iframe=document.createElement("iframe")
+
+iframe.src=game.embed
+iframe.allow="autoplay; fullscreen"
+iframe.allowFullscreen=true
+
+videoContainer.appendChild(iframe)
+
+}
+
+/* SCREENSHOTS */
+
+const gallery=document.getElementById("gallery")
+gallery.innerHTML=""
+
+if(game.screenshots){
+
+game.screenshots.forEach(src=>{
+
+const img=document.createElement("img")
+
+img.src=src
+
+img.onclick=()=>openImage(src)
+
+gallery.appendChild(img)
+
+})
+
+}
+
+selected=null
+
+document.querySelectorAll(".rating button")
+.forEach(x=>x.classList.remove("active"))
+
+}
+
+/* LIGHTBOX */
+
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=document.getElementById("lightbox-img")
+
+function openImage(src){
+
+lightbox.style.display="flex"
+lightboxImg.src=src
+
+}
+
+lightbox.onclick=()=>{
+
+lightbox.style.display="none"
+
+}
+
+/* NEXT GAME */
+
+async function nextGame(){
+
+if(selected === null){
+alert("Поставь оценку")
+return
+}
+
+const gameId = games[index]
+const score = selected
+
+answers[gameId] = score
+
+/* отправляем в Google Sheets */
+
+try{
+
+await fetch("https://script.google.com/macros/s/AKfycbxh2BlgebEKrA-HiCy5p7YWypnq7fxww2jvFAqYRLU_qF3scFqWUgqGLjDmZfOrbMwP/exec",{
+
+method:"POST",
+
+mode:"no-cors",
+
+body:JSON.stringify({
+game:gameId,
+score:score
+})
+
+})
+
+console.log("sent to sheets")
+
+}catch(e){
+
+console.log("error sending to sheets",e)
+
+}
+
+/* следующая игра */
+
+index++
+
+if(index >= games.length){
+
+localStorage.setItem("steamSurvey",JSON.stringify(answers))
+
+console.log("RESULTS",answers)
+
+alert("Опрос завершён")
+
+return
+
+}
+
+loadGame()
+
+}
+
+createRating()
+loadGame()
+
+</script>
+
+</body>
+</html>
